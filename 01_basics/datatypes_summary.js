@@ -1,4 +1,4 @@
-//  Primitive
+//  Primitive -stack memory type
 
 //  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
 
@@ -19,7 +19,7 @@ console.log(id === anotherId);
 
 
 // Reference (Non primitive)     = all  of their return type is function
-
+// - heap return type
 // Array, Objects, Functions
 
 const heros = ["shaktiman", "naagraj", "doga"];
