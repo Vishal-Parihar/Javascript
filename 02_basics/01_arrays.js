@@ -26,12 +26,13 @@ const myArr2 = new Array(1, 2, 3, 4)
 
 // slice, splice
 
-// slice- slice out a piece from an array.It creates a new array
-// splice- can be used to add new items in an array
+// slice- slice out a piece from an array.It creates a new array .   it dosen't manipulates origianal array
+// splice- can be used to add new items in an array .eg (1,3) starting from 1 it will remove 3 elements. 
+//manipulates original array
 
 console.log("A ", myArr);
 
-const myn1 = myArr.slice(1, 3)
+const myn1 = myArr.slice(1, 3)   //here upper value is not considered i.e 1,2 (element at pos 1&2 are returned)
 
 console.log(myn1);
 console.log("B ", myArr);
