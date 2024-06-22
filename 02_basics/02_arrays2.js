@@ -10,7 +10,7 @@ const dc_heroes = ["flask","batman","superman"]
 const newHeroes = [...marvel_heroes, ...dc_heroes]     //SPREAD OPERATOR
 // console.log(newHeroes);
 
-const arr2 = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]
+const arr2 = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]            //array of arrays
 const another_array = arr2.flat(Infinity)
 // console.log(another_array);
 
