@@ -1,7 +1,9 @@
 // ways to declare objects- i) Variable/literals      - can have multiple instances
 //                          ii) constructors    -  creates a singleton object       - eg:  Object.create
 
-//Object literals
+
+
+//+++++++++++++++++++Object literals++++++++++++++++++++++++++++++
 
 const mySym = Symbol("Key1")    //symbols- used to add unique property keys to an object
 const jsUser = {
