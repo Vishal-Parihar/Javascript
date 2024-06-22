@@ -52,8 +52,30 @@ const users =  [
 
 // console.log(tinderUser)
 
-console.log(Object.keys(tinderUser));                   //bhery bhey important        returns array of object
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));    //makes an array by combining key and value pairs
+// console.log(Object.keys(tinderUser));                   //bhery bhey important        returns array of object
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));    //makes an array by combining key and value pairs
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));   //searches/asks the obj it has specific value or not
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));   //searches/asks the obj it has specific value or not
+
+const course = {
+    courseName : "js in hindi",
+    price : "999",
+    courseInstuctor : "hitesh"
+}
+
+const{courseInstuctor:instructor} = course
+// console.log(courseInstuctor);
+console.log(instructor);
+
+// {
+//     "name": "hitesh",
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+[                                         //[ ] -JSON
+    {},
+    {},
+    {}
+]
