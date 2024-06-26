@@ -1,0 +1,34 @@
+// reduce - A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce()
+
+const myNum = [1,2,3]
+
+const myTotal  = myNum.reduce( function (accumulator,currentValue) {
+    // console.log(`accumulator is: ${accumulator}  , current value is: ${currentValue}`);
+    return accumulator + currentValue
+}, 0 )               // 0 = initial value of accumulator
+// console.log(myTotal);
+
+
+const shoppingCart = [
+    {
+        itemName : "js  Course",
+        price : 2999
+    },
+    {
+        itemName : "pyhton course",
+        price : 999
+    },
+    {
+        itemName : "mobile dev",
+        price : 5999
+    },
+    {
+        itemName : "data science",
+        price : 10999
+    },
+]
+
+const priceToPay = shoppingCart.reduce((acc, item) =>acc+item.price , 0)         //0 initial cart value
+console.log(priceToPay);
+
+
