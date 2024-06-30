@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+  <ul class="language">
+    <li>Javascript</li>
+  </ul>
+    
+</body>
+<script>
+    //adding values
+    //non-optimized way
+    function addLanguage(langName) {
+        const li = document.createElement('li')    //creates an element li
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+ }
+addLanguage("python")
+addLanguage("Typescript")
+addLanguage("MongoDB") 
+// if the data is large than this method is not very useful as it takes long time to access the tree and also we add data at the end of the list which causes optimization issue
+
+
+//optimized-way
+function addOptiLang(langName) {
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langName))  //created text node and added it to li ,appendChild is more optimized than 
+                                                                                               //innerHTML
+    document.querySelector('.language').appendChild(li)
+}
+addOptiLang("golang")
+
+//EDIT VALUES
+//eg. edit python(2nd language)
+
+const secondLang = document.querySelector("li:nth-child(2)")
+//first-way
+// secondLang.innerHTML = "Mojo"    //non-optimized way  
+
+//2nd way-    create a new li and add text content to it, than edit the value with 'replaceWith' method
+const newLi = document.createElement('li')
+newLi.textContent = "Mojo"
+secondLang.replaceWith(newLi)
+
+//third way
+const firstLi = document.querySelector("li:first-child")
+firstLi.outerHTML = '<li> ReactJS </li>'
+
+//REMOVE- ELEMENT/VALUES
+const removeLang = document.querySelector("li:last-child")
+removeLang.remove()
+</script>
+</html>
