@@ -1,6 +1,6 @@
 # Projects related to DOM
 
-## project link
+## Project link
 [click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=13-jokes%2Fstyle.css,1-colorChanger%2Findex.html)
 
 
@@ -32,3 +32,4 @@ buttons.forEach(function (button){
 })
 
 ```
+
