@@ -3,9 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Events</title>
 </head>
-<body>
+
+<body style="background-color: #212121; color: #fff;">
+    <h2>images</h2>
+<div >
+    <ul id="images">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</div>
     
+    <script>
+    //     document.getElementById('owl').onclick = function() {      //use event listner istead. onclick has some disadvantages
+    //     alert('owl clicked')
+    // }
+
+    document.getElementById('owl').addEventListener('click', function(){
+        // alert('owl clicked again')
+    },false)                    //in eventlistner there is a third parameter false, which is by default so we usually dont write it
+   
+   //learn these-
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    
+    //EVENT PROPAGATION -defines third paramter of event listner
+    //context of event propagation- 
+    //1)event bubbling (mostly used) i.e false  = like a bubbble goes from bottom to top ,first the inner element will be traced then bbigger one  
+    // 2) event capturing  (i.e true)
+
+    //evnet bubbling
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('clicked inside the ul');        //second
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('clicked owl');   //it wil be printed first
+    //     e.stopPropagation();     //it will not propagate to outside element,only it will get executed
+    // },false)
+
+    //event capturing
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('clicked inside the ul');        //first
+    // },true)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('clicked owl');   //second
+    // },true)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation()
+    console.log('google clicked') 
+ },false)
+
+ 
+ //click image and it gets removed
+ document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+})
+    
+   </script>
 </body>
 </html>
