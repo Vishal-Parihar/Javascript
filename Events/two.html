@@ -1,5 +1,7 @@
 <!-- setTimeout() and clearTimeout() -->
-
+<!-- The global setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires. -->
+ 
+<!-- clearTimeout-The global clearTimeout() method cancels a timeout previously established by calling setTimeout() -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +30,7 @@ const changeText = function() {
 }
 // setTimeout(changeText,2000)          //give here function refernce not its execution
 const alterMe = setTimeout(changeText,2000)
-//clearTimeout-The global clearTimeout() method cancels a timeout previously established by calling setTimeout()
+
 
 document.querySelector('#stop').addEventListener('click',function(){
     clearTimeout(alterMe);       //prevents from changing the text if pressed before 2s
