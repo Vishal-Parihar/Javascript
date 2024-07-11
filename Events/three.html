@@ -1,0 +1,33 @@
+<!-- setInterval() and clearInterval() -->
+ <!-- The setInterval() method, offered on the Window and WorkerGlobalScope interfaces, repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. -->
+
+ <!-- The global clearInterval() method cancels a timed, repeating action which was previously established by a call to setInterval(). If the parameter provided does not identify a previously established action, this method does nothing. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intervals</title>
+ </head>
+ <body style="background-color: #212121;color: #fff;">
+    <h1>chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+ </body>
+
+ <script>
+    const sayDate = function(str){
+        // console.log(str,Date.now());
+    }
+    const intervalId = setInterval(sayDate,1000,"VishalLearnsJS")
+    // clearInterval(intervalId) //stops setInterval from executing
+    
+     const printThis = document.getElementById('start').addEventListener('click', function(){
+        console.log("Vishal",Date.now());
+         });
+          const chalNa = setInterval(printThis,1000)
+          clearInterval(chalNa,5000)
+
+ </script>
+ </html>
