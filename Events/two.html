@@ -1,0 +1,41 @@
+<!-- setTimeout() and clearTimeout() -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+        <h1>Chai aur code</h1>
+        <button id="stop">stop</button>
+    
+</body>
+<script>
+//   setTimeout( function(){
+//     console.log('Vishal');
+//   },2000)         //2000ms =2s , code will run after 2 sec
+
+// OR
+const sayName = function(){
+    console.log('Vishal');
+}
+// setTimeout(sayName,2000)
+
+const changeText = function() {
+    document.querySelector('h1').innerHTML = "Best JS series ever"
+}
+// setTimeout(changeText,2000)          //give here function refernce not its execution
+const alterMe = setTimeout(changeText,2000)
+//clearTimeout-The global clearTimeout() method cancels a timeout previously established by calling setTimeout()
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(alterMe);       //prevents from changing the text if pressed before 2s
+    console.log('Stopped');
+})
+
+
+
+</script>
+</html>
