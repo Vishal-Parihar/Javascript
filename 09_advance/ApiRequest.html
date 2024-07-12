@@ -1,0 +1,40 @@
+<!-- AJAX = Asynchronous JavaScript And XML.
+AJAX is not a programming language.
+AJAX just uses a combination of:
+A browser built-in XMLHttpRequest object (to request data from a web server)
+JavaScript and HTML DOM (to display or use the data) -->
+
+<!-- XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+<body style="background-color: #212121;">
+ Value	    State	                       Description
+  
+ 0	        UNSENT	                       Client has been created. open() not called yet.
+  1	        OPENED                        open() has been called.
+  2	        HEADERS_RECEIVED	           send() has been called, and headers and status are available.
+  3	        LOADING	                       Downloading; responseText holds partial data.
+  4	        DONE	                       The operation is complete.
+    
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/Vishal-Parihar"
+    const xhr = new XMLHttpRequest();      //creating obj
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){                          //data that we get here is in string format mostly
+            const data = JSON.parse(this.responseText)    //conversion from sting to JSON which is object
+            console.log(typeof data);
+            console.log(data.following);
+        }
+    }
+    xhr.send();
+</script>
+</html>                       
