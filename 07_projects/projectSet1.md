@@ -4,7 +4,7 @@
 [click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=13-jokes%2Fstyle.css,1-colorChanger%2Findex.html)
 
 
-## Project1
+## Project1(Color changer)
 
 ```javascript
 const buttons = document.querySelectorAll('.button')
@@ -33,7 +33,7 @@ buttons.forEach(function (button){
 
 ```
 
-## Project 2
+## Project 2(BMI calculator)
 ```javascript
 const form = document.querySelector('form');
 // this usecase will give you empty value
@@ -61,7 +61,7 @@ form.addEventListener('submit', function (e) {
 
 ```
 
-# Project 3
+# Project 3 (display clock)
 ```javascript
 const clock = document.getElementById('clock')
 // const clock = document.querySelector('#clock')
@@ -78,7 +78,7 @@ setInterval(function(){
 ```
 
 
-# Project 4
+# Project 4(Guess the number)
 ```javascript
 
 let randomNumber = parseInt(Math.random() * 100 + 1);
@@ -174,7 +174,33 @@ function newGame() {
 }
 ```
 
-# Project 6
+
+# Project 5 (Keyboard Check )
+```javascript
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div id = "class">
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td> ${e.key === ' '?'Space' :e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  </table>
+  </div>
+  `;
+});
+
+```
+
+# Project 6 (Genrate random color )
 ```javascript
 //generates a  random color every second when start is click and stops generating when stop is pressed
 const randomColor = function(){
