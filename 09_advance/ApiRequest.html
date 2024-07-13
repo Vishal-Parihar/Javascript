@@ -29,9 +29,9 @@ JavaScript and HTML DOM (to display or use the data) -->
     xhr.open('GET',requestUrl)
     xhr.onreadystatechange = function(){
         console.log(xhr.readyState);
-        if(xhr.readyState === 4){                          //data that we get here is in string format mostly
+        if(xhr.readyState === 4){              //data that we get from url as response is in string format mostly
             const data = JSON.parse(this.responseText)    //conversion from sting to JSON which is object
-            console.log(typeof data);
+            console.log(typeof data); 
             console.log(data.following);
         }
     }
