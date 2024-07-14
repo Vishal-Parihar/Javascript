@@ -49,4 +49,14 @@ const promiseFour = new Promise(function(resolve,reject){
     },1000)
 })
 
+//consume promiseFour
+promiseFour.then( (user)=>{          //user is a parameter in fn
+     console.log(user);
+     return user.userName
+}).then( (username)=> {                        //chaining , value from first then will be transferred here
+console.log(username);
+}).catch(function(error){
+    console.log(error);
+})
+
 
