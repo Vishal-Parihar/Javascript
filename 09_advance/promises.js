@@ -112,3 +112,4 @@ fetch('https://api.github.com/users/Vishal-Parihar')
     console.log(data);
 })
 .catch((error)=>console.log(error))
+
