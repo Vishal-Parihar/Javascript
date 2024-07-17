@@ -1,9 +1,11 @@
-function multipleBy5(num){
+//everything in javascript is an object
+//even function is an onject
 
-    return num*5
+function multipleBy5(num){
+ return num*5
 }
 
-multipleBy5.power = 2
+multipleBy5.power = 2     //fn can be accessed using '.' ; this means function is an obj
 
 console.log(multipleBy5(5));
 console.log(multipleBy5.power);
