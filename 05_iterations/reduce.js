@@ -1,5 +1,8 @@
 // reduce - A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce()
-
+// The reduce() method executes a reducer function for array element.
+// The reduce() method returns a single value: the function's accumulated result.
+// The reduce() method does not execute the function for empty array elements.
+// The reduce() method does not change the original array.
 const myNum = [1,2,3]
 
 const myTotal  = myNum.reduce( function (accumulator,currentValue) {

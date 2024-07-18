@@ -1,6 +1,8 @@
 //everything in javascript is an object
 //even function is an onject
 
+//The this keyword refers to the context where a piece of code, such as a function's body, is supposed to run. Most typically, it is used in object methods, where this refers to the object that the method is attached to, thus allowing the same method to be reused on different objects.
+
 function multipleBy5(num){
  return num*5
 }
@@ -8,23 +10,23 @@ function multipleBy5(num){
 multipleBy5.power = 2     //fn can be accessed using '.' ; this means function is an obj
 
 console.log(multipleBy5(5));
-console.log(multipleBy5.power);
+console.log(multipleBy5.power);    //2 will be printed
 console.log(multipleBy5.prototype);
 
 function createUser(username, score){
-    this.username = username
+    this.username = username        //this seperates local username with parameter username
     this.score = score
 }
 
 createUser.prototype.increment = function(){
     this.score++
 }
-createUser.prototype.printMe = function(){
+createUser.prototype.printMe = function(){          //we can inject our own defined properties in a function
     console.log(`price is ${this.score}`);
 }
 
-const chai = new createUser("chai", 25)
-const tea = createUser("tea", 250)
+const chai = new createUser("chai", 25)         //new keyword creates a new object in the memory
+const tea = createUser("tea", 250) 
 
 chai.printMe()
 

@@ -6,7 +6,10 @@
     
     
 
-    //filter - The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+    //filter - The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the e
+    // The filter() method creates a new array filled with elements that pass a test provided by a function.
+    // The filter() method does not execute the function for empty elements.
+    // The filter() method does not change the original array.lements from the given array that pass the test implemented by the provided function.
 
     const myNums = [1,2,3,4,5,6,7,8,9,10]
     // const newNum = myNums.filter( (num) => num >5)             #implicit functions
