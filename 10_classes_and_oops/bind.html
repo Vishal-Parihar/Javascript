@@ -18,13 +18,13 @@
 
             document
             .querySelector('button')
-            .addEventListener('click',this.handleClick.bind(this))           //bind collects all the above values together
+            .addEventListener('click',this.handleClick.bind(this))           //bind collects all the above values together so that we can refrence of previous this also
         }
         handleClick(){
             console.log('Button Clicked');
             console.log(this.server);
         }
     }
-    const app = new React()
+    const app = new React()   //object creation>>
   </script>
   </html>
