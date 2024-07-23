@@ -14,4 +14,4 @@
     }
  }
  const tea = Object.create(user)
- console.log(tea.email);      //_email acts as a private property here, so it can be accessed using email
+ console.log(tea.email);      //_email acts as a private propert y here, so it can be accessed using email

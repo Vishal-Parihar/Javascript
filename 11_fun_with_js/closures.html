@@ -1,0 +1,76 @@
+<!-- a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clousers</title>
+  </head>
+  <body style="background-color: #212121"></body>
+  <button id="orange">Orange</button>
+  <button id="blue">Blue</button>
+  <script>
+    //++++++++++++++ Lexical Scoping ++++++++++++++
+
+    // function init() {
+    //   var name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    function outer() {
+      let userName = "Vishal";
+      function inner() {
+        //can access elements of parent function
+        console.log("inner:", userName);
+        let secret = "my123"; //can neither be accessed by parent or sub child elements
+      }
+      function innerTwo() {
+        console.log("innerTwo:", userName); //can access elements of parent function
+      }
+      inner();
+      innerTwo();
+    }
+    outer();
+
+    //++++++++ CLOSURE +++++++++++
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      return displayName;       //refrence of fn is passed as a return
+    }
+
+    const myFunc = makeFunc(); //although our functional scope is removed by executing the function so no lexical scoping is there.
+//but then comes the role of memory , when myFunc is called it executes makeFUnc() function and display name is returned. Not only display name will get into memory ,but its outer function will also be retuned in memory(if exits),because of lexical scoping. This implies whole memory is shared
+//in simple terms when a function is returned, its whole lexical scope is returned
+    myFunc();
+  </script>
+
+  <script>
+    //implementation of closure
+     // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){          //bad practise as we are repeating same code again n again
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`     //will not work we need to return a function
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")      //here it is expecting a function to return but rather we were executing it so it wasnt working .To overcome this closure is implemented and function is returned there
+        document.getElementById('blue').onclick = clickHandler("blue")
+
+  </script>
+</html>
